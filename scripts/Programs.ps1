@@ -9,6 +9,7 @@ $Packages = @(
     "7zip"
     "sysinternals"
     "powertoys"
+    "microsoft-windows-terminal"
 )
 
 ForEach ($PackageName in $Packages)
