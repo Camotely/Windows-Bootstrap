@@ -32,6 +32,12 @@ Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer 
 # Disable Quick Access: Frequent Folders
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer -Name ShowFrequent -Type DWord -Value 0
 
+# Disable Desktop icons
+If (-Not (Test-Path "HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer")) {
+    New-Item -Path HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer | Out-Null
+}
+Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer -Name NoDesktop -Type DWord -Value 1
+
 # --- Privacy ---
 
 # Disable Advertising ID
