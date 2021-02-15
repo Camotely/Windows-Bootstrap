@@ -15,8 +15,8 @@ function executeScript {
         Invoke-Expression ((New-Object net.webclient).DownloadString("$scriptUri/$script"))
 }
 
-Write-Host "File Explorer" -ForegroundColor "Yellow"
-executeScript "FileExplorer.ps1";
+#Write-Host "File Explorer" -ForegroundColor "Yellow"
+#executeScript "FileExplorer.ps1";
 Write-Host "Debloat" -ForegroundColor "Yellow"
 executeScript "Debloat.ps1";
 Write-Host "Programs" -ForegroundColor "Yellow"
