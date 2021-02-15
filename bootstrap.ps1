@@ -15,12 +15,12 @@ function executeScript {
 }
 
 executeScript "FileExplorer.ps1";
-executeScript "Debloat.ps1";
-executeScript "Programs.ps1";
+#executeScript "Debloat.ps1";
+#executeScript "Programs.ps1";
 
-executeScript "Hyper-V.ps1";
+#executeScript "Hyper-V.ps1";
 RefreshEnv
-executeScript "WSL.ps1";
+#executeScript "WSL.ps1";
 
 # Re-enabling UAC
 Enable-UAC
