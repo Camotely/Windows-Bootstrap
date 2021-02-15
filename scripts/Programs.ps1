@@ -6,7 +6,6 @@ $Packages = @(
     "powershell-core"
     "microsoft-teams"
     "slack"
-    "office365business"
     "7zip"
     "sysinternals"
     "powertoys"
