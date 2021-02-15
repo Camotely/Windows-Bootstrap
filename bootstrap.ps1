@@ -2,6 +2,7 @@
 # http://boxstarter.org/package/url?https://raw.githubusercontent.com/Camotely/Windows-Bootstrap/main/test.ps1
 
 # Disabling until the end of the bootstrap process
+Write-Host "Disabling UAC" -ForegroundColor "Yellow"
 Disable-UAC
 
 # Ensure that installing Powershell modules don't prompt for dependencies
@@ -14,19 +15,28 @@ function executeScript {
         Invoke-Expression ((New-Object net.webclient).DownloadString("$scriptUri/$script"))
 }
 
+Write-Host "File Explorer" -ForegroundColor "Yellow"
 executeScript "FileExplorer.ps1";
-#executeScript "Debloat.ps1";
-#executeScript "Programs.ps1";
+Write-Host "Debloat" -ForegroundColor "Yellow"
+executeScript "Debloat.ps1";
+Write-Host "Programs" -ForegroundColor "Yellow"
+executeScript "Programs.ps1";
 
-#executeScript "Hyper-V.ps1";
+Write-Host "Hyper V" -ForegroundColor "Yellow"
+executeScript "Hyper-V.ps1";
+Write-Host "Refreshing" -ForegroundColor "Yellow"
 RefreshEnv
-#executeScript "WSL.ps1";
+Write-Host "WSL" -ForegroundColor "Yellow"
+executeScript "WSL.ps1";
 
+Write-Host "UAC" -ForegroundColor "Yellow"
 # Re-enabling UAC
 Enable-UAC
 
+Write-Host "Enabling Updates" -ForegroundColor "Yellow"
 # Enable Windows Updates
 Enable-MicrosoftUpdate
 
+Write-Host "Updating" -ForegroundColor "Yellow"
 # Install Windows Updates
 Install-WindowsUpdate -acceptEula
