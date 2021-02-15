@@ -64,7 +64,7 @@ if ($env:computername -ne $computername) {
 }
 
 # --- Desktop Background ---
-Invoke-WebRequest -Uri 'https://github.com/Camotely/Windows-Bootstrap/backgrounds/1.jpg' -Method Get -ContentType image/jpeg -OutFile 'C:\Windows\Web\Wallpaper\Windows 10\1.jpg'
+Invoke-WebRequest -Uri 'https://github.com/Camotely/Windows-Bootstrap/raw/main/backgrounds/1.jpg' -Method Get -ContentType image/jpeg -OutFile 'C:\Windows\Web\Wallpaper\Windows\1.jpg'
 Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value 'C:\Windows\Web\Wallpaper\Windows 10\1.jpg'
 rundll32.exe user32.dll, UpdatePerUserSystemParameters
 RefreshEnv
