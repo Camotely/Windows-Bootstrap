@@ -27,7 +27,7 @@ function executeScript {
 }
 
 # Basic install scripts
-executeScript "FileExplorer.ps1";
+executeScript "SystemConfiguration.ps1";
 executeScript "Debloat.ps1";
 executeScript "Programs.ps1";
 
