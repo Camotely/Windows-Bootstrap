@@ -34,7 +34,7 @@ Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer 
 
 # Disable Desktop icons
 If (-Not (Test-Path "HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer")) {
-    New-Item -Path HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer | Out-Null
+    New-Item -Path HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer | Out-Null
 }
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer -Name NoDesktop -Type DWord -Value 1
 
